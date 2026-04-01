@@ -15,27 +15,23 @@ create.addEventListener("click", () => {
             box.classList.add("box");
 
             box.addEventListener("click", () => {
-                let color = document.getElementById("color").value;
-                box.style.color = color;
-
-                if (box.textContent === "X") {
-                    box.textContent = "";
-                } else if(box.textContent==="X"&&currentx==false){
-                    box.textContent = "Y";
-                }
-                else if(box.textContent==="Y"){
-                    box.textContent="";
-                }
-                else if(box.textContent===""&&currentx==false){
-                    box.textContent="X";
-                    currentx=true;
-                }else if(box.textContent===""&&currentx){
-                    let color2 = document.getElementById("color2").value;
-                    box.style.color=color2;
-                    box.textContent="Y";
-                    currentx=false;
-                }
-            });
+    if(currentx === false && box.textContent === "") {
+        let color = document.getElementById("color").value;
+        box.style.color = color;
+        box.textContent = "X";
+        currentx = true;
+    } 
+    else if(currentx === true && box.textContent === "") {
+        let color2 = document.getElementById("color2").value;
+        box.style.color = color2;
+        box.textContent = "Y";
+        currentx = false;
+    } 
+    else if(box.textContent === "X" || box.textContent === "Y") {
+        box.textContent = "";
+        currentx = false;
+    }
+});
             clear.addEventListener("click",()=>{
     box.textContent="";
 })
