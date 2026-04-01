@@ -1,0 +1,58 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: yellow;
+}
+.height{
+    width: 40px;
+    height: 25px;
+}
+.width{
+    width: 40px;
+    height: 25px;
+}
+.hwc{
+    display: flex;
+    gap: 20px;
+}
+.main{
+    height: auto;
+    width: auto;
+    background-color: white;
+    border-radius: 25px;
+    padding: 30px;
+}
+.color{
+    height: 30px;
+    width: 50px;
+}
+.middle{
+    margin-top: 30px;
+}
+.middle button{
+    border: 3px solid black;
+    margin-top: 0px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+.bottom{
+    margin-top: 30px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #ccc; 
+    overflow: hidden;
+}
+
