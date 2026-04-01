@@ -1,6 +1,7 @@
 let create = document.getElementById("create");
 let grid = document.getElementById("grid");
 let clear = document.getElementById("clear");
+let currentx=false;
 create.addEventListener("click", () => {
     let width = Number(document.getElementById("width").value);
     let height = Number(document.getElementById("height").value);
@@ -19,8 +20,20 @@ create.addEventListener("click", () => {
 
                 if (box.textContent === "X") {
                     box.textContent = "";
-                } else {
-                    box.textContent = "X";
+                } else if(box.textContent==="X"&&currentx==false){
+                    box.textContent = "Y";
+                }
+                else if(box.textContent==="Y"){
+                    box.textContent="";
+                }
+                else if(box.textContent===""&&currentx==false){
+                    box.textContent="X";
+                    currentx=true;
+                }else if(box.textContent===""&&currentx){
+                    let color2 = document.getElementById("color2").value;
+                    box.style.color=color2;
+                    box.textContent="Y";
+                    currentx=false;
                 }
             });
             clear.addEventListener("click",()=>{
@@ -32,3 +45,4 @@ create.addEventListener("click", () => {
         grid.appendChild(rowdiv);
     }
 });
+
